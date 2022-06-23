@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import Blob from './script/components/blob';
@@ -25,7 +25,7 @@ const App = () => {
   useEffect(() => {
     let timer: NodeJS.Timeout = setTimeout(() => {
       if (allowed) {
-        if (transcript.split(' ')[transcript.split(' ').length - 1].toLocaleLowerCase() === 'подскажи') {
+        if (transcript.includes('скажи')) {
           setAnswer(true)
           setTimeout(() => {
             setAnswer(false)
@@ -42,13 +42,15 @@ const App = () => {
   }, [transcript])
 
   return (
-    <div className="App">
+    <>
       {answer && <Answer />}
-      <Blob ready={allowed} />
-      <div>
-        {allowed ? 'Текст ' + transcript : `Скажите 'Лиля'`}
+      <div className="App">
+        <Blob ready={allowed} />
+        <div>
+          {allowed ? 'Текст ' + transcript : `Скажите 'Лиля'`}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
