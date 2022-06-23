@@ -26,7 +26,7 @@ const App = () => {
   useEffect(() => {
     let timer: NodeJS.Timeout = setTimeout(() => {
       if (allowed) {
-        if (transcript.includes('скажи')) {
+        if (transcript.includes('скажи')) { // дописать.
           setAnswer(true)
           setTimeout(() => {
             setAnswer(false)
@@ -44,7 +44,8 @@ const App = () => {
 
   return (
     <>
-      {answer && <Answer />}
+      {/* {answer && <Answer />} */}
+      <Answer />
       <div className="App">
         <Blob ready={allowed} />
         <div>
