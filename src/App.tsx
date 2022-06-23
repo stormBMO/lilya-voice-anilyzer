@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import './App.css';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import Blob from './script/components/blob';
@@ -47,7 +48,7 @@ const App = () => {
       <div className="App">
         <Blob ready={allowed} />
         <div>
-          {allowed ? 'Текст ' + transcript : `Скажите 'Лиля'`}
+          {allowed ? transcript : `Скажите 'Лиля'`}
         </div>
       </div>
     </>
