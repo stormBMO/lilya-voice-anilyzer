@@ -5,9 +5,7 @@ import { spline } from '@georgedoescode/spline'
 
 
 const Blob = ({ ready }: { ready: boolean }) => {
-  // our <path> element
   const path = document.querySelector("path");
-  // used to set our custom property values
   const root = document.documentElement;
 
   let hueNoiseOffset = 0;
@@ -22,11 +20,8 @@ const Blob = ({ ready }: { ready: boolean }) => {
 
   const createPoints = () => {
     const points = [];
-    // how many points do we need
     const numPoints = 6;
-    // used to equally space each point around the circle
     const angleStep = (Math.PI * 2) / numPoints;
-    // the radius of the circle
     const rad = 75;
 
     for (let i = 1; i <= numPoints; i++) {
